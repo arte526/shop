@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const ItemBrand = mongoose.model('ItemBrand', new Schema({
+const ItemBrandModel = mongoose.model('ItemBrand', new Schema({
     brand_id: {type: String, unique: true, required: true},
     brand_type: {type: Schema.Types.ObjectId, ref: 'ItemType'},
     brand_name: {type: String, required: false, default: null},
@@ -9,4 +9,4 @@ const ItemBrand = mongoose.model('ItemBrand', new Schema({
     updatedAt: {type: String, required: false, default: (new Date()).getTime()},
 }));
 
-module.exports = ItemBrand;
+module.exports = ItemBrandModel;

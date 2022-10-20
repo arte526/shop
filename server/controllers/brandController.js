@@ -1,6 +1,5 @@
 const e = require('express');
 const ApiError = require('../error/apiError');
-const brandQueryFilter = require('../filters/brandQueryFilter');
 
 class BrandController {
     async create (req, res) {

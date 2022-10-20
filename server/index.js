@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./routes/index');
 const errorHandler = require('./middleware/errorHandlingMiddleware');
+const cookieParser = require('cookie-parser')
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors());
 app.use('/api', routes);
 
 // last handler Error 
