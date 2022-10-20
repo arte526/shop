@@ -13,13 +13,11 @@ const TestPage = () => {
     }
 
     return (        
-        <div>
-            
-            {'Email: ' + userSlice.user_email}
-
-            <form className='form'>
-                <div>
-                    <input className="formInput mr-15"type="text" onInput={(e)=>{setEmail(e)}}/>
+        <div className="text-4xl">
+            <p>{'Email: ' + userSlice.user_email}</p>
+            <form >
+                <div className="form">
+                    <input className="formInput" type="text" onInput={(e)=>{setEmail(e)}}/>
                 </div>
                 <div className="">
                     <button onClick={(e)=>{e.preventDefault()}}>Save</button>
