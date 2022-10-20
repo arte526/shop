@@ -14,6 +14,7 @@ const TestPage = () => {
 
     return (        
         <div>
+            
             {'Email: ' + userSlice.user_email}
 
             <form className='form'>
