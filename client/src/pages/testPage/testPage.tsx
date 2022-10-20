@@ -1,9 +1,8 @@
 import React from 'react';
-import { EventType } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { updateEmail } from '../../store/User/userSlice';
-
+import './testPage.scss';
 
 const TestPage = () => {
     const userSlice = useSelector((state: RootState) => state.user)
@@ -18,10 +17,10 @@ const TestPage = () => {
             {'Email: ' + userSlice.user_email}
 
             <form className='form'>
-                <div className="input">
-                    <input type="text" onInput={(e)=>{setEmail(e)}}/>
+                <div>
+                    <input className="formInput mr-15"type="text" onInput={(e)=>{setEmail(e)}}/>
                 </div>
-                <div className="button">
+                <div className="">
                     <button onClick={(e)=>{e.preventDefault()}}>Save</button>
                 </div>
             </form>
