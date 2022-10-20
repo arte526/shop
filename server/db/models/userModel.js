@@ -14,7 +14,7 @@ const User = mongoose.model('User', new Schema({
     country: {type: String, required: false, default: null},
     phoneNumber: {type: String, required: false, default: null},
     cart: [{
-        item_id: {type: String, required: true},
+        item_id: {type: Schema.Types.ObjectId, ref: 'Item'},
         countItem: Number,
     }],
     likedItems: [{item_id: String}],
@@ -23,6 +23,8 @@ const User = mongoose.model('User', new Schema({
         roleLogin: {type: String, required: false, default: null},
         rolePass: {type: String, required: false, default: null},
     },
+    isActivated: {type: Boolean, default: false},
+    activationLink: {type: String },
     createdAt: {type: String, required: false, default: (new Date()).getTime()},
     updatedAt: {type: String, required: false, default: (new Date()).getTime()},
 }));

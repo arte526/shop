@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Route, Routes, Navigate} from 'react-router-dom';
-import {DEFAULT_PAGE, RoutesForAuthorized, RoutesForNotAuthorized} from './routes'
+import {DEFAULT_PAGE, RoutesForNotAuthorized} from './routes'
 
 
 const Router: FC = () => {
