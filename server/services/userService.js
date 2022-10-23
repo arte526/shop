@@ -1,4 +1,4 @@
-const User_model = require('../db/models/userModel');
+const UserModel = require('../db/models/userModel');
 const uuid = require('uuid');
 const bcrypt = require('bcrypt');
 const { sendActivationMail } = require('./mailService');
@@ -8,7 +8,7 @@ const userDTO = require('../dtos/userDto');
 class userService {
 
     async register (email, password) {
-        const isUser = await User_model.findOne({email: email});
+        const isUser = await UserModel.findOne({email: email});
         if(isUser){
             throw new Error(`User with email: ${email} is already exists`);
         }
@@ -24,21 +24,34 @@ class userService {
             activationLink
         };
 
-        const user = new User_model(UserParams);
+        const user = new UserModel(UserParams);
         await user.save();
 
-        await sendActivationMail(email, activationLink);
+        await sendActivationMail(email, `${process.env.BASE_API_URL}/api/user/activate/${activationLink}`);
         
         const tokenUserDTO = new userDTO(user);
-        const tokens = await tokenService.generateTokens({...tokenUserDTO});
+        const tokens = await tokenService.generateTokens(tokenUserDTO);
         await tokenService.saveTokens(tokenUserDTO.id, tokens.refreshToken);
 
         return {
             ...tokens,
-            user: userDTO
+            user: tokenUserDTO
         };
     }
 
+    async activate (activationLink) {
+        try{
+            const user = await UserModel.findOne({activationLink});
+            if(!user){
+                throw new Error(`User not registered`);
+            }
+            user.activationLink = null;
+            user.isActivated = true;
+            await user.save();
+        }catch (e){
+            console.log(e)
+        }
+    }
 }
 
 module.exports = new userService();
