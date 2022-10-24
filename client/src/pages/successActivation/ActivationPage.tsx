@@ -1,6 +1,8 @@
 import React from "react";
 import './ActivationPage.scss'
 
+
+
 const ActivationPage = () => {
 
     return(
