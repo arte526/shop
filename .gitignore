@@ -8,10 +8,10 @@ node_modules
 # testing
 /coverage
 
-
+.vscode
 # production
 /build
-
+dist
 # misc
 .env
 .DS_Store
