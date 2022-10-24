@@ -26,6 +26,26 @@ function () {
   }
 
   _createClass(tokenService, [{
+    key: "validateAccessToken",
+    value: function validateAccessToken(token) {
+      try {
+        var userData = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
+        return userData;
+      } catch (e) {
+        return null;
+      }
+    }
+  }, {
+    key: "validateRefreshToken",
+    value: function validateRefreshToken(token) {
+      try {
+        var userData = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+        return userData;
+      } catch (e) {
+        return null;
+      }
+    }
+  }, {
     key: "generateTokens",
     value: function generateTokens(payload) {
       var accessToken, refreshToken;
@@ -89,6 +109,54 @@ function () {
             case 10:
             case "end":
               return _context2.stop();
+          }
+        }
+      });
+    }
+  }, {
+    key: "removeToken",
+    value: function removeToken(refreshToken) {
+      var token;
+      return regeneratorRuntime.async(function removeToken$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return regeneratorRuntime.awrap(tokenModel.deleteOne({
+                refreshToken: refreshToken
+              }));
+
+            case 2:
+              token = _context3.sent;
+              return _context3.abrupt("return", token);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      });
+    }
+  }, {
+    key: "findToken",
+    value: function findToken(refreshToken) {
+      var token;
+      return regeneratorRuntime.async(function findToken$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return regeneratorRuntime.awrap(tokenModel.findOne({
+                refreshToken: refreshToken
+              }));
+
+            case 2:
+              token = _context4.sent;
+              return _context4.abrupt("return", token);
+
+            case 4:
+            case "end":
+              return _context4.stop();
           }
         }
       });

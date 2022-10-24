@@ -3,17 +3,16 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./routes/index');
-const errorHandler = require('./middleware/errorHandlingMiddleware');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const errorMiddleware = require('./middleware/errorHandlingMiddleware');
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 app.use('/api', routes);
-
 // last handler Error 
-app.use(errorHandler);
+app.use(errorMiddleware);
 
 const start = async () => {
     try{
