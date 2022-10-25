@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const UserModel = require("../db/models/userModel");
 const userService = require('../services/userService');
 const {validationResult} = require('express-validator');
+const UserDTO = require("../dtos/userDto");
 
 class UserController {
     async register (req, res, next) {
@@ -60,6 +61,14 @@ class UserController {
         try{
             await userService.activate(req.params.link);
             return res.redirect(`${process.env.BASE_CLIENT_URL}/${process.env.CLIENT_URL_ACTIVATION_PAGE}`);
+        }catch (e){
+            next(e)
+        }
+    }
+    async getAllUsers (req, res, next){
+        try{
+            const users = await userService.getUsers();
+            return res.json(users);
         }catch (e){
             next(e)
         }
