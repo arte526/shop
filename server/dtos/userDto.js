@@ -1,6 +1,6 @@
 module.exports = class UserDTO {
-    email;
     id;
+    email;
     isActivated;
     constructor (user) {
         this.email = user.email, 
