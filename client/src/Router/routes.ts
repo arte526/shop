@@ -1,6 +1,7 @@
-import GoodsPage from "../pages/goodsPage/goodsPage";
+import DefaultPage from "../pages/defaultPage/defaultPage";
 import ActivationPage from "../pages/successActivation/ActivationPage";
 import TestPage from "../pages/testPage/testPage";
+// import GoodsPage from "../pages/goodsPage/goodsPage";
 
 export const DEFAULT_PAGE = '/';
 export const TEST_PAGE = '/testPage';
@@ -10,7 +11,7 @@ export const ACTIVATION = '/activation'
 export const RoutesForAuthorized = [
     {
         path: DEFAULT_PAGE,
-        component: GoodsPage
+        component: DefaultPage
     },
     {
         path: ACTIVATION,
@@ -20,7 +21,7 @@ export const RoutesForAuthorized = [
 export const RoutesForNotAuthorized = [
     {
         path: DEFAULT_PAGE,
-        component: GoodsPage
+        component: DefaultPage
     },
     {
         path: TEST_PAGE,

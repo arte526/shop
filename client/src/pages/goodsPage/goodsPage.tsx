@@ -1,6 +1,6 @@
 import React from 'react';
 import './goodsPage.scss';
-import Good from '../../components/Good';
+import Good from '../../components/Good/Good';
 
 const GoodsPage = () => {
 
