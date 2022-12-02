@@ -6,3 +6,8 @@
     font-family: RobotoMono_Medium;
     src: url('./assets/fonts/static/RobotoMono-Medium.ttf');
 }
+
+.fontFamily{ 
+    font-family: 'RobotoMono_Medium';
+    font-style: normal;
+}
