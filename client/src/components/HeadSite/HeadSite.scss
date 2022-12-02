@@ -1,23 +1,64 @@
-.header-site{
+.headerApp{
     width: 100%;
-    height: 100px;
-    position: absolute;
+    height: 92px;
+    background-color: white;
+    border-width: 0px 0px 1px 0px;
+    border-color: #cdcdcd;
 
-    background-color: rgb(244, 244, 244);
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
 
-    .navBar-ul{
-        height: 100%;
-        display: flex;
 
-        .logo-nav-li{
-            height: 100px;
-            width: 100px;
-                margin-left: 110px;
-                margin-top: 40px;
-            .img-logo-nav{
-                width: 60px;
-                height: 60px;
+    .container1400{
+        width: 1400px;    
+        
+        .navBar{
+            height: 92px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .leftSide{
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .logo{
+                    margin-right: 35px;
+                    margin-bottom: 0px;
+                }
+                .item:not(:last-child){
+                    margin-right: 27px;
+                    margin-bottom: 0px;
+                }
+                .item{
+                    .titlesTopics{
+                        font-family: 'RobotoMono_Medium';
+                        font-style: normal;
+                        font-size: 15px;
+                        letter-spacing: 0.5px;
+                    }
+                }
             }
+            .rightSide{
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .item:not(:last-child){
+                    margin-right: 25px;
+                    margin-bottom: 0px;
+                }
+                .item{
+                    .titlesTopics{
+                        font-family: 'RobotoMono_Medium';
+                        font-style: normal;
+                    }
+                }
+            }
+        
         }
     }
 }
