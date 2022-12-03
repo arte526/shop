@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './laptopsPage.scss';
 import Good from '../../components/Good/Good';
 
-const GoodsPage = () => {
+const LaptopsPage = () => {
+
+    const [GoodHover, useGoodHoverUpdate] = useState(false);
+
+    // const HoverGood = (event: React.SyntheticEvent<EventTarget>, status: boolean) => {
+    //     useGoodHoverUpdate(status);
+    //     console.log(event);
+    // }
 
     const arr = []; 
     for(let i = 0; i < 25; i += 1){
@@ -15,12 +22,12 @@ const GoodsPage = () => {
             <div className='wrapperLaptopsPage'>
                 <ul className='w-100% grid grid-cols-5 gap-10 justify-between'>
                     {
-                        arr.map(el => {
+                        arr.map((el, i) => {
                         return (
-                            <li>
-                                <div className="w-60 h-80">
-                                    {el}
-                                </div>
+                            <li key={i}
+                                className={'w-60 h-80'}
+                                style={GoodHover ? {height: '280px', position: 'absolute'} : {height: '320px', position: 'relative'}}>
+                                {el}
                             </li>
                         )})
                     }
@@ -31,4 +38,4 @@ const GoodsPage = () => {
     )
 }
 
-export default GoodsPage
+export default LaptopsPage
