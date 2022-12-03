@@ -1,5 +1,6 @@
 import React from "react";
-import './HeadSite.scss'
+import { Link } from "react-router-dom";
+import './HeadSite.scss';
 
 import iconSite from '../../assets/icons/icon-site';
 import iconSearch from "../../assets/icons/icon-search";
@@ -13,10 +14,14 @@ const HeadSite = () => {
                     <ul className="navBar justify-between">
                         <div className="leftSide">
                             <li className="logo">
-                                {iconSite}
+                                <Link to="/">
+                                    {iconSite}
+                                </Link>
                             </li>
                             <li className="item">
-                                <p className="titlesTopics">Laptops</p>
+                                <Link to="/laptops">
+                                    <p className="titlesTopics">Laptops</p>
+                                </Link>
                             </li>
                             <li className="item">
                                 <p className="titlesTopics">Desktop PCs</p>

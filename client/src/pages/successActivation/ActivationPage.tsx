@@ -11,7 +11,7 @@ const ActivationPage = () => {
                 <div className="Upper">
                     <div className="svg-box">
                         <svg className="circular green-stroke">
-                            <circle className="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+                            <circle className="path" cx="75" cy="75" r="50" fill="none" strokeWidth="5" strokeMiterlimit="10"/>
                         </svg>
                         <svg className="checkmark green-stroke">
                             <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)">
