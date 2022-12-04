@@ -14,7 +14,7 @@ const Good: React.FC = () => {
     return(
         <>
             <div 
-            className="w-60 h-80"
+            className="w-55 h-80"
             >
                 <div className="mx-5 flex flex-col justify-between">
                     <div className="">

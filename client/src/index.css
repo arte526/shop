@@ -3,11 +3,31 @@
 @tailwind utilities;
 
 @font-face {
+    font-family: RobotoMono_Light;
+    src: url('./assets/fonts/static/RobotoMono-Light.ttf');
+}
+@font-face {
     font-family: RobotoMono_Medium;
     src: url('./assets/fonts/static/RobotoMono-Medium.ttf');
 }
+@font-face {
+    font-family: RobotoMono_Bold;
+    src: url('./assets/fonts/static/RobotoMono-Bold.ttf');
+}
 
-.fontFamily{ 
+.RobotoLightFont{ 
+    font-family: 'RobotoMono_Light';
+    font-style: normal;
+}
+.RobotoMediumFont{ 
     font-family: 'RobotoMono_Medium';
     font-style: normal;
+}
+.RobotoBoldFont{ 
+    font-family: 'RobotoMono_Bold';
+    font-style: normal;
+}
+
+.buttonInActive {
+    
 }

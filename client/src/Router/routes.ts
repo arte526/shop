@@ -5,9 +5,8 @@ import LaptopsPage from "../pages/laptopsPage/laptopsPage";
 
 export const DEFAULT_PAGE = '/';
 export const TEST_PAGE = '/testPage';
-export const ACTIVATION = '/activation'
-export const LAPTOPSPAGE = '/laptops'
-
+export const ACTIVATION = '/activation';
+export const LAPTOPSPAGE = '/laptops';
 
 export const RoutesForAuthorized = [
     {

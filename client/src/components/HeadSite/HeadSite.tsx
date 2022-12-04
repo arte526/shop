@@ -13,29 +13,29 @@ const HeadSite = () => {
                 <div className="container1400">
                     <ul className="navBar justify-between">
                         <div className="leftSide">
-                            <li className="logo">
+                            <li className="logo hover:text-blue-700">
                                 <Link to="/">
                                     {iconSite}
                                 </Link>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <Link to="/laptops">
                                     <p className="titlesTopics">Laptops</p>
                                 </Link>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <p className="titlesTopics">Desktop PCs</p>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <p className="titlesTopics">Networking Devices</p>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <p className="titlesTopics">Printers & Scanners</p>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <p className="titlesTopics">PC Parts</p>
                             </li>
-                            <li className="item">
+                            <li className="item hover:text-blue-700 hover:cursor-pointer select-none">
                                 <p className="titlesTopics">All Other Products</p>
                             </li>
                         </div>
