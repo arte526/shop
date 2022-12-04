@@ -5,7 +5,7 @@ import { updateEmail } from '../../store/User/userSlice';
 import './testPage.scss';
 
 const TestPage = () => {
-    const userSlice = useSelector((state: RootState) => state.user)
+    const userSlice = useSelector((state: RootState) => state.userSlice)
     const dispatch = useDispatch<AppDispatch>();
 
     const setEmail = (e: React.FormEvent<HTMLInputElement>): void => {
