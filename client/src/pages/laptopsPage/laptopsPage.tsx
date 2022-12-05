@@ -2,41 +2,16 @@ import React, { useState, useEffect } from 'react';
 //store
 import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/index';
-import { removeFilter, addFilter } from '../../store/FilterSort/filterSortSlice';
 //UI components
 import './laptopsPage.scss';
 import Good from '../../components/Good/Good';
-import { ButtonFilters, ButtonInActive, ButtonLight } from '../../components/UI/Buttons';
+import { FilterNav } from '../../components/FilterNav/FilterNav';
 
 
 
 const LaptopsPage = () => {
 
     //store
-
-    //Filters
-    const filterSortSlice = useSelector((state: RootState) => state.filterSortSlice)
-    const dispatch = useDispatch<AppDispatch>();
-
-    const addFilterAction = () => { dispatch(addFilter(Math.random() + ''))}
-    const removeFilterAction = (name: string) => { dispatch(removeFilter(name)) }
-
-    const [filters, setFilters] = useState(null)
-
-    const fetchFilters = () => {
-        return filterSortSlice.filters.map((el, i)=>{
-            return(
-                <li key={i}>
-                    <ButtonFilters
-                    key={i}
-                    onClickAction={(el: string)=>{removeFilterAction(el)}}
-                    classNamesButton=""
-                    title={el}
-                    />
-                </li>
-            )
-        }) 
-    }
 
     //layout
     const [GoodHover, useGoodHoverUpdate] = useState(false);
@@ -54,27 +29,7 @@ const LaptopsPage = () => {
                 <div className="grid grid-rows-30 grid-flow-col">
                     <div className="row-span-3 w-100%" style={{width: '200px'}}>
                         <div className="w-50 mt-5 rounded-lg leftSideFilters justify-center" style={{height: "700px"}}>
-                            <div className="flex justify-center">
-                                <p className='RobotoBoldFont tracking-tight mt-2'>FILTERS</p>
-                            </div>
-                            <div className="w-50">
-                                <ul className='m-2 flex flex-row flex-wrap justify-center overflow-hidden'>
-                                    {
-                                        fetchFilters()
-                                    }
-                                </ul>
-                            </div>
-                            <div className="w-50">
-                                <ButtonInActive
-                                onClickAction={()=>{}}
-                                classNamesButton='w-50 h-7' title="Reset filters"/>
-                            </div>
-                            <div className="w-50">
-                                <ButtonLight 
-                                key={Math.random()}
-                                onClickAction={() => addFilterAction()}
-                                classNamesButton="w-50 h-7" title="Apply filters (2)"/>
-                            </div>
+                            <FilterNav/>
                         </div>
                     </div>
                     <div className="col-span-2 row-span-2 w-100%" style={{width: '1200px'}}>asdaasd312e98c</div>

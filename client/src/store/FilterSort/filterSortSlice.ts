@@ -1,19 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IFilterSortState } from "../types/filterSortSliceTypes";
+import { IFilterArraySettings, IFilterSortState } from "../types/filterSortSliceTypes";
 
 const initialState: IFilterSortState = {
-    filters: []
+    filters: [{
+        filterId: '',
+        filterName: ''
+    }]
 }
 
 export const filterSortSlice = createSlice({
     name: 'filterSort',
     initialState,
     reducers: {
-        addFilter: (state, action: PayloadAction<string>) => { 
+        addFilter: (state, action: PayloadAction<IFilterArraySettings>) => { 
             state.filters.push(action.payload)
         },
         removeFilter: (state, action: PayloadAction<string>) => { 
-            state.filters = state.filters.filter((el) => el !== action.payload) 
+            state.filters = state.filters.filter((el) => el.filterId !== action.payload) 
         },
     }
 })
