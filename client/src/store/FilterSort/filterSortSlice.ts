@@ -2,10 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IFilterArraySettings, IFilterSortState } from "../types/filterSortSliceTypes";
 
 const initialState: IFilterSortState = {
-    filters: [{
-        filterId: '',
-        filterName: ''
-    }]
+    filters: []
 }
 
 export const filterSortSlice = createSlice({
@@ -18,8 +15,11 @@ export const filterSortSlice = createSlice({
         removeFilter: (state, action: PayloadAction<string>) => { 
             state.filters = state.filters.filter((el) => el.filterId !== action.payload) 
         },
+        removeAllFilters: (state) => {
+            state.filters = [];
+        },
     }
 })
 
-export const { addFilter, removeFilter } = filterSortSlice.actions;
+export const { addFilter, removeFilter, removeAllFilters } = filterSortSlice.actions;
 export default filterSortSlice.reducer; 

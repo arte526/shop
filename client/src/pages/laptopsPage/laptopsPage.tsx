@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
-//store
-import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../store/index';
+import React from 'react';
 //UI components
 import './laptopsPage.scss';
 import Good from '../../components/Good/Good';
 import { FilterNav } from '../../components/FilterNav/FilterNav';
+import FilterNavAcordion from '../../components/FilterNav/FilterNavDropDown/FilterNavAcordion';
 
 
 
@@ -14,7 +12,6 @@ const LaptopsPage = () => {
     //store
 
     //layout
-    const [GoodHover, useGoodHoverUpdate] = useState(false);
 
     const arr = []; 
     for (let i = 0; i < 25; i += 1){
@@ -40,7 +37,7 @@ const LaptopsPage = () => {
                                 return (
                                     <li key={i}
                                         className={'w-60 h-80'}
-                                        style={GoodHover ? {height: '280px', position: 'absolute'} : {height: '320px', position: 'relative'}}>
+                                        style={{height: '320px', position: 'relative'}}>
                                         {el}
                                     </li>
                                 )})
@@ -51,6 +48,7 @@ const LaptopsPage = () => {
             </div>
         </div>
     </div>
+    <FilterNavAcordion/>
     </>
     )
 }
