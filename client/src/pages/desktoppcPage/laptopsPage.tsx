@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './laptopsPage.scss';
+//UI components
 import Good from '../../components/Good/Good';
-import { ButtonInActive, ButtonLight } from '../../components/UI/Buttons';
+import { LightButton } from '../../components/Buttons/LightButton';
+import { FilterButton } from '../../components/Buttons/FilterButton';
 
 const LaptopsPage = () => {
 
@@ -46,10 +48,10 @@ const LaptopsPage = () => {
                         <div className="w-50 mt-5 leftSideFilters" style={{height: "700px"}}>
                             <p className='RobotoBoldFont tracking-tight '>Filters</p>
                             <div className="w-50">
-                                <ButtonInActive classNamesButton='w-50 h-7' title="Reset filters"/>
+                                <LightButton isActive={false} classNamesButton='w-50 h-7' title="Reset filters"/>
                             </div>
                             <div className="w-50">
-                                <ButtonLight classNamesButton="w-50 h-7" title="Apply filters (2)"/>
+                                <LightButton classNamesButton="w-50 h-7" title="Apply filters (2)"/>
                             </div>
                         </div>
                     </div>
