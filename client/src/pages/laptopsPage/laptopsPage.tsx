@@ -3,7 +3,7 @@ import React from 'react';
 import './laptopsPage.scss';
 import Good from '../../components/Good/Good';
 import { FilterNav } from '../../components/FilterNav/FilterNav';
-import FilterNavAcordion from '../../components/FilterNav/FilterNavDropDown/FilterNavAcordion';
+import FilterNavAcordion from '../../components/FilterNav/FilterNavDropDown/FilterNavDropDown';
 
 
 
@@ -48,7 +48,6 @@ const LaptopsPage = () => {
             </div>
         </div>
     </div>
-    <FilterNavAcordion/>
     </>
     )
 }

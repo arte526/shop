@@ -3,5 +3,7 @@ export interface ButtonProps {
     title: string
     onClickAction?: any
     isActive?: any
-    classNamesButton: string
+    classNamesButton?: string
+    width?: any
+    height?: any
 }
