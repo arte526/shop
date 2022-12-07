@@ -1,28 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 //store
 import { useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../../store";
-import { useDispatch } from "react-redux";
+import { RootState } from "../../../store";
 //UI components
 import { Accordion, AccordionHeader, AccordionBody} from "@material-tailwind/react";
 import { IconFilterNavAcordion } from "./iconForFilternav";
 import SubFilterAcordion from "./SubFilterAcordion";
-import { addFilter, removeAllFilters, removeFilter } from "../../../store/FilterSort/filterSortSlice";
-import { IFilterArraySettings } from "../../../store/types/filterSortSliceTypes";
+import { removeFilter } from "../../../store/FilterSort/filterSortSlice";
+
 
 interface IAcordionProps {
   title?: string
   addFilterAction?: any
-}
-interface IFilterGroupProps {
-  id: number
-  Group: {title: string, payload: string[]}
+  removeFilterAction?: any
 }
 
 
 const FilterNavDropDown = (props: IAcordionProps) => {
-  const { addFilterAction } = props;
+    const { addFilterAction, removeFilterAction } = props;
+
+    //store
+    const filterSortSlice = useSelector((state: RootState) => state.filterSortSlice)
     //layout
 
     const [open, setOpen] = useState(1);
@@ -37,6 +35,13 @@ const FilterNavDropDown = (props: IAcordionProps) => {
         {title: "Videocards", payload: ['MSI', 'Gigabyte']},
         {title: "Memory", payload: ['Kingston', 'Crucial']},
       ]
+
+      const setFilter = (isFilter: boolean, filterName: string) => {
+        isFilter ? addFilterAction({
+          filterId: filterName+"182hd",
+          filterName
+        }) : removeFilterAction(filterName+"182hd")
+      }
       
       return components.map((el, i)=>{
         return(
@@ -49,14 +54,13 @@ const FilterNavDropDown = (props: IAcordionProps) => {
                 <div className="flex justify-start">
                   <div>
                     <ul>
-                    {el.payload.map((el, i)=>{return(
-                          <li>
-                            <SubFilterAcordion key={i+"f3g"} 
-                            onInput={()=>{addFilterAction({
-                              filterId: el+"182hd",
-                              filterName: el
-                            })}}
-                            title={el}/>
+                    {el.payload.map((firm, i)=>{
+                      return(
+                          <li key={i+"f3g"}>
+                            <SubFilterAcordion  
+                            onInput={()=>{setFilter(!filterSortSlice.filters.find(el=>{return el.filterName === firm}), firm)}}
+                            id={firm+"182hd"}
+                            title={firm}/>
                           </li>
                         )
                       })}

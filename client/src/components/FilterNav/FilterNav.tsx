@@ -74,7 +74,7 @@ export const FilterNav = () => {
             </div>
             <div className="w-100% flex justify-center">
                 <ul>
-                    <FilterNavDropDown addFilterAction={addFilterAction}/>
+                    <FilterNavDropDown removeFilterAction={removeFilterAction} addFilterAction={addFilterAction}/>
                 </ul>
             </div>
             <div className="mt-5 flex justify-center w-100%">
