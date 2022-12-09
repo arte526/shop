@@ -12,6 +12,10 @@ export const filterSortSlice = createSlice({
         addFilter: (state, action: PayloadAction<IFilterArraySettings>) => { 
             state.filters.push(action.payload)
         },
+        editFilter: (state, action: PayloadAction<IFilterArraySettings>) => { 
+            state.filters = state.filters.filter((el)=>{return el.filterId !== action.payload.filterId})
+            state.filters.push(action.payload)
+        },
         removeFilter: (state, action: PayloadAction<string>) => { 
             state.filters = state.filters.filter((el) => el.filterId !== action.payload) 
         },
@@ -21,5 +25,5 @@ export const filterSortSlice = createSlice({
     }
 })
 
-export const { addFilter, removeFilter, removeAllFilters } = filterSortSlice.actions;
+export const { addFilter, removeFilter, removeAllFilters, editFilter } = filterSortSlice.actions;
 export default filterSortSlice.reducer; 
