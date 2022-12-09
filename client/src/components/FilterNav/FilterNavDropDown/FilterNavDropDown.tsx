@@ -25,7 +25,7 @@ const FilterNavDropDown = (props: IAcordionProps) => {
 
     const [open, setOpen] = useState(1);
     const handleOpen = (value: number) => {
-        setOpen(open === value ? 0 : value);
+        setOpen(value);
     };
 
 
@@ -46,9 +46,9 @@ const FilterNavDropDown = (props: IAcordionProps) => {
       return components.map((el, i)=>{
         return(
             <li key={i+"ij9"} id={i+"ij9"}>
-              <Accordion open={open === i} icon={<IconFilterNavAcordion id={i} open={open} />}>
-                <AccordionHeader className='h-100%' onClick={() => handleOpen(i)}>
-                  <p className="RobotoLightFont">{el.title}</p>
+              <Accordion open={open === i} icon={<div style={{marginTop: '5px'}}><IconFilterNavAcordion id={i} open={open} /></div>}>
+                <AccordionHeader className='h-100%' onClick={() => handleOpen(i === open ? 0 : i)}>
+                  <p className="RobotoLightFont text-lg">{el.title}</p>
                 </AccordionHeader>
                 <AccordionBody>
                 <div className="flex justify-start">
@@ -59,7 +59,7 @@ const FilterNavDropDown = (props: IAcordionProps) => {
                           <li key={i+"f3g"}>
                             <SubFilterAcordion  
                             onInput={()=>{setFilter(!filterSortSlice.filters.find(el=>{return el.filterName === firm}), firm)}}
-                            id={firm+"182hd"}
+                            id={firm+"182"}
                             title={firm}/>
                           </li>
                         )
