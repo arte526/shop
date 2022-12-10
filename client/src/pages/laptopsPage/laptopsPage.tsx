@@ -37,7 +37,7 @@ const LaptopsPage = () => {
         </ul>
     }
 
-    const itemsSortByDropdown = [{title: "Price from high to low"},{title: "Price from low to high"}]
+    const itemsSortByDropdown = [{title: "Price high to low"},{title: "Price low to high"}]
     const itemsShowDropdown = [{title: '9 per page'},{title: '18 per page'},{title: '32 per page'}]
 
     return(
@@ -53,8 +53,8 @@ const LaptopsPage = () => {
                     </div>
                     <div className="col-span-2 row-span-2 w-100%" style={{width: '1200px', height: '40px', marginTop: "10px"}}>
                         <div className="ml-5 h-[40px]">
-                            <ul className="flex flex-row justify-between h-[40px]">
-                                <li className='mt-[5px] h-[21px]'>
+                            <ul className="flex flex-row justify-between h-[40px] bg-slate-100 rounded-lg p-[4px]">
+                                <li className='ml-2 h-[21px]'>
                                     <span className='RobotoMediumFont align-middle'>Items 1-35 of 61</span>
                                 </li>
                                 <div className="w-[200px] flex flex-row justify-between">
