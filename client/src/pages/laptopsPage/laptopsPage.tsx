@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 //UI components
 import './laptopsPage.scss';
 import Good from '../../components/Good/Good';
 import { FilterNav } from '../../components/FilterNav/FilterNav';
-import FilterNavAcordion from '../../components/FilterNav/FilterNavDropDown/FilterNavDropDown';
 import { Preloader } from '../../assets/preloaders/preloaderSite';
 import DropDown from '../../components/Dropdown/Dropdown';
+import { Link } from 'react-router-dom';
 
 const LaptopsPage = () => {
 
@@ -21,18 +21,20 @@ const LaptopsPage = () => {
 
         const arr = []; 
         for (let i = 0; i < 25; i += 1){
-            arr.push(<Good/>)
+            arr.push({id: i, payload: <Good/>})
         }
 
         return isLoading ? <Preloader/> : 
         <ul className='w-100% grid grid-cols-5 gap-2 justify-between'>
         {arr.map((el, i) => {
         return (
-            <li key={i}
-                className={'w-60 h-80'}
-                style={{height: '320px', position: 'relative'}}>
-                {el}
-            </li>
+            <Link to={`/goodPage/${el.id}`}>
+                <li key={i}
+                    className={'w-60 h-80'}
+                    style={{height: '320px', position: 'relative'}}>
+                    {el.payload}
+                </li>
+            </Link>
         )})}
         </ul>
     }

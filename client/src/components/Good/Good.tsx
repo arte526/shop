@@ -13,9 +13,7 @@ const Good: React.FC = () => {
 
     return(
         <>
-            <div 
-            className="w-55 h-80"
-            >
+            <div className="w-55 h-80 bg-white">
                 <div className="mx-5 flex flex-col justify-between">
                     <div className="">
                         <img src={laptopSkelet}/>
