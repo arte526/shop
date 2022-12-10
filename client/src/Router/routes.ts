@@ -2,11 +2,13 @@ import DefaultPage from "../pages/defaultPage/defaultPage";
 import ActivationPage from "../pages/successActivation/ActivationPage";
 import TestPage from "../pages/testPage/testPage";
 import LaptopsPage from "../pages/laptopsPage/laptopsPage";
+import GoodPage from "../pages/goodPage/goodPage";
 
 export const DEFAULT_PAGE = '/';
 export const TEST_PAGE = '/testPage';
 export const ACTIVATION = '/activation';
 export const LAPTOPSPAGE = '/laptops';
+export const GOODPAGE = '/goodPage/:id';
 
 export const RoutesForAuthorized = [
     {
@@ -38,5 +40,9 @@ export const RoutesForNotAuthorized = [
     {
         path: LAPTOPSPAGE,
         component: LaptopsPage,
+    },
+    {
+        path: GOODPAGE,
+        component: GoodPage
     }
 ];
