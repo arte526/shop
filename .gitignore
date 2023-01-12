@@ -14,6 +14,8 @@ node_modules
 /build
 dist
 /css
+css
+
 # misc
 .env
 .DS_Store
