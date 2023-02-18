@@ -21,7 +21,7 @@ const ActivationPage = () => {
                     </div>
                     <div className="left">
                         <p className="SuccessP">Success activation</p>
-                        <form action="/" className="submitForm">
+                        <form action="/laptops" className="submitForm">
                             <button className="submit-button">Back to shop</button>
                         </form>
                     </div>
