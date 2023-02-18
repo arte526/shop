@@ -56,10 +56,11 @@ const FilterNavDropDown = (props: IAcordionProps) => {
                     <ul>
                     {el.payload.map((firm, i)=>{
                       return(
-                          <li key={i+"f3g"}>
+                          <li key={firm+"182hd"}
+                          id={firm+"182hd"}>
                             <SubFilterAcordion  
-                            onInput={()=>{setFilter(!filterSortSlice.filters.find(el=>{return el.filterName === firm}), firm)}}
-                            id={firm+"182"}
+                            onInput={()=>{setFilter(!filterSortSlice.filters.find(el=>{return el.filterName === firm+"182hd"}), firm)}}
+                            id={firm+"182hd"}
                             title={firm}/>
                           </li>
                         )
