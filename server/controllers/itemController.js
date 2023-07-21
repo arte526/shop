@@ -6,7 +6,7 @@ class ItemController {
     }
     async getAll (req, res) {
     }
-    async getOne (req, res) {
+    async getOne(req, res) {
     }
 }
 

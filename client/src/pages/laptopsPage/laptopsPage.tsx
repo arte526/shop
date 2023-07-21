@@ -43,7 +43,7 @@ const LaptopsPage = () => {
     const itemsShowDropdown = [{title: '9 per page'},{title: '18 per page'},{title: '32 per page'}]
 
     return(
-    <>
+        <>
     <div className="flex flex-col justify-center">
         <div className="flex justify-center">
             <div  style={{width: '1400px'}}>
