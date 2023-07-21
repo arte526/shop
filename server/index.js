@@ -17,7 +17,7 @@ app.use(errorMiddleware);
 const start = async () => {
     try{
         console.log('\n');
-        await mongoose.connect(process.env.DB_CONNECTLINK);
+        // await mongoose.connect(process.env.DB_CONNECTLINK);
         console.log('\n');
         console.log(`✅ DB  connected`)
     
